@@ -94,6 +94,8 @@ $("#ans-btn").on('click', function(){
         if (correct === quizSet.length) {
             message = 'おめでとう！勝ち抜けだ！！'
             $('.result-img').children('img').attr('src', 'img/ny.png')
+            var music = new Audio('sound/clear.mp3');
+            music.play();
         } else {
             message = '残念。東京へお帰りください。';
             $('.result-img').children('img').attr('src', 'img/tokyo.jpg')
