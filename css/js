@@ -1,0 +1,8 @@
+$("li").click(function(){
+    var id =  $(this).attr("id");
+    log.console(id);
+})
+
+$("#li").on('click', function(){
+    alert('aa)
+})
