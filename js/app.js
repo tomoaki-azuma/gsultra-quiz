@@ -5,7 +5,7 @@ const quizSet = shuffle([
     {q: '次のうち ruby　によるフレームワークは？', c: ['django', 'catalyst', 'ruby on rails', 'react'], a: '2'},
     {q: '1biteは何bit？', c: ['8', '2', '4','16'], a: '0'},
     {q: '1,1,2,3,5,8,13.....何数列？', c: ['モンチッチ', 'フィボナッチ', 'ジョコビッチ','等差'], a: '1'},
-    {q: '次のうち両リーグ１０００本安打を達成していないのは？', c: ['落合博満', '稲葉篤紀', '大杉勝男','和田一浩'], a: '1'},
+    {q: '幅優先探索、略して？', c: ['BFS', 'DFS', 'WHO','HYT'], a: '0'},
     {q: '変数や関数の参照できる範囲のことを何という？', c: ['スロープ', 'スコップ', 'スコープ','レンジ'], a: '2'},
   ]);
 
@@ -88,10 +88,14 @@ $("#ans-btn").on('click', function(){
         if (answer === ans_no) {
             console.log($('li #' + answer.toString()).text())
             $('li p#' + ans_no.toString()).append('  ○　正解')
+            var music = new Audio('sound/901.mp3');
+            music.play();
             correct++;
         } else {
             console.log($('li #' + answer.toString()).text())
             $('li p#' + ans_no.toString()).append('  ×　不正解')
+            var music = new Audio('sound/540.mp3');
+            music.play();
         }
         var message = ''
         if (correct === quizSet.length) {
@@ -112,10 +116,14 @@ $("#ans-btn").on('click', function(){
             if (answer === ans_no) {
                 console.log($('li #' + answer.toString()).text())
                 $('li p#' + ans_no.toString()).append('  ○　正解')
+                var music = new Audio('sound/901.mp3');
+                music.play();
                 correct++;
             } else {
                 console.log($('li #' + answer.toString()).text())
                 $('li p#' + ans_no.toString()).append('  ×　不正解')
+                var music = new Audio('sound/540.mp3');
+                music.play();
             }
     
             current++;
